@@ -9,10 +9,13 @@
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
+    overflow: hidden;
 }
 
+.input-section{
+    margin-top: 150px;
+}
 
 .input{
-    margin: auto;
-    margin-top: 150px !important;
+    margin: 25px !important;
 }
