@@ -2,10 +2,12 @@ import { Button } from '@material-ui/core';
 import TextField  from '@material-ui/core/TextField';
 import React, { useState } from 'react';
 import './App.css';
+import CheckPrime from './Utils/CheckPrime'
 
 function App() {
 
   let [number , setNumber] = useState<Number>(0)
+  let [flag , setFlag] = useState(false)
 
   const handleChange = (e : any) =>{
     let num = Number(e.target.value)
@@ -15,8 +17,8 @@ function App() {
   }
 
   const handleSubmit = () =>{
-    console.log(number);
 
+    setFlag(CheckPrime(number));
     setNumber(0)
   }
   
@@ -27,7 +29,9 @@ function App() {
        <Button variant='contained' color='secondary' className='input' onClick={handleSubmit} >Check</Button>
      </div>
      <div className="result">
-       <h1 className='res-tag' >PRIME</h1>
+       <h1 className='res-tag' >{
+         flag ? 'PRIME' : 'NON-PRIME'
+       }</h1>
      </div>
     </div>
   );
