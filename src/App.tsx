@@ -16,6 +16,8 @@ function App() {
 
   const handleSubmit = () =>{
     console.log(number);
+
+    setNumber(0)
   }
   
   return (
